@@ -17,10 +17,6 @@ module Songkick
         validates_uniqueness_of :refresh_token_hash, :scope => :client_id, :allow_nil => true
         validates_uniqueness_of :access_token_hash,                        :allow_nil => true
         
-        if self.respond_to?(:attr_accessible)
-          attr_accessible nil
-        end
-        
         class << self
           private :create, :new
         end

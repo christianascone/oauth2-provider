@@ -15,10 +15,6 @@ module Songkick
         validates_presence_of   :name, :redirect_uri
         validate :check_format_of_redirect_uri
         
-        if self.respond_to?(:attr_accessible)
-          attr_accessible :name, :redirect_uri
-        end
-        
         before_create :generate_credentials
         
         def self.create_client_id
