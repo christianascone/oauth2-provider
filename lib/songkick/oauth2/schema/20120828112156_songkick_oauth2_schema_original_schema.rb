@@ -25,7 +25,7 @@ class SongkickOauth2SchemaOriginalSchema < ActiveRecord::Migration
     add_index :oauth2_authorizations, [:client_id, :code]
     add_index :oauth2_authorizations, [:access_token_hash]
     add_index :oauth2_authorizations, [:client_id, :access_token_hash]
-    add_index :oauth2_authorizations, [:client_id, :refresh_token_hash]
+    add_index :oauth2_authorizations, [:client_id, :refresh_token_hash], :name => 'idx_auth_client_refresh_hash'
   end
   
   def self.down
