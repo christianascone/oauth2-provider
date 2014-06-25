@@ -51,8 +51,7 @@ module Songkick
             raise ArgumentError, "The argument should be a #{Client}, instead it was a #{client.class}"
           end
 
-          instance = owner.oauth2_authorization_for(client) ||
-                     new do |authorization|
+          instance = new do |authorization|
                        authorization.owner  = owner
                        authorization.client = client
                      end

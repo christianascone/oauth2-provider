@@ -163,7 +163,7 @@ module Songkick
 
           return if @error
 
-          @authorization = Provider.handle_password(@client, @params[USERNAME], @params[PASSWORD], scopes)
+          @authorization = Provider.handle_password(@client, @params[USERNAME], @params[PASSWORD], scopes, @params['duration'])
           return validate_authorization if @authorization
 
           @error = INVALID_GRANT
