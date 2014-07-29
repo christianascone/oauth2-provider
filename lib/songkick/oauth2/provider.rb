@@ -99,9 +99,9 @@ module Songkick
         @password_handler = block
       end
 
-      def self.handle_password(client, username, password, scopes, duration)
+      def self.handle_password(client, username, password, scopes)
         return nil unless @password_handler
-        @password_handler.call(client, username, password, scopes, duration)
+        @password_handler.call(client, username, password, scopes)
       end
 
       def self.filter_assertions(&filter)
